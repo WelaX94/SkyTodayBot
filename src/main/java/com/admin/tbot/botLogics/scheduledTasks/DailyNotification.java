@@ -32,7 +32,7 @@ public class DailyNotification {
 
     @Scheduled(fixedRate = 60000)
     public void notificationCheck() {
-        final List<User> userList = userListRepository.getUserList();
+        final List<User> userList = userListRepository.getDailyMailingUsers();
         final List<User> updateList = new ArrayList<>();
         for (User user: userList) {
             final LocalDateTime now = LocalDateTime.now(ZoneId.of(user.getUtc()));

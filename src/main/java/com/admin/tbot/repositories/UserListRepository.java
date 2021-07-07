@@ -7,7 +7,7 @@ import java.util.List;
 @Repository
 public interface UserListRepository {
 
-    public List<User> getUserList();
+    public List<User> getDailyMailingUsers();
 
     public void updateUserList(List<User> userList);
 

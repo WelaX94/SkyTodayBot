@@ -22,9 +22,9 @@ public class UserListService implements UserListRepository {
     private SessionFactory sessionFactory;
 
     @Override
-    public List<User> getUserList() {
+    public List<User> getDailyMailingUsers() {
         final Session session = sessionFactory.getCurrentSession();
-        final Query<User> query = session.createQuery("from User");
+        final Query<User> query = session.createQuery("from User where dailyMailing = 1");
         return query.getResultList();
     }
 
