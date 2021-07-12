@@ -36,7 +36,7 @@ public class DailyNotification {
         final List<User> updateList = new ArrayList<>();
         for (User user: userList) {
             final LocalDateTime now = LocalDateTime.now(ZoneId.of(user.getUtc()));
-            if (user.isDailyMailing() && user.getNotificationTime().isBefore(now)) {
+            if (user.getNotificationTime().isBefore(now)) {
                 final long chatId = (user.getChatId());
                 String message = weatherMessages.getDailyNotification(user.getCityInfo());
                 user.setNotificationTime(user.getNotificationTime().plusDays(1));
